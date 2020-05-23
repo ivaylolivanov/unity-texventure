@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f5aa17978b9d0618a26f1d826efb05, type: 3}
+  m_Name: Intro1
+  m_EditorClassIdentifier: 
+  StoryText: 'While going through the city center, a hodded pasenger bumps into you. 
+    A few moments later you feel nauseated. A sharp and unbearable sound piereces
+    your brain. The scenery around you starts to spin in different directions at
+    the same time. Instinctively, you close your eyes. You faint ... '
+  ChoicesText: 1. ...
+  SceneItems: []
+  nextStates:
+  - {fileID: 11400000, guid: f1c70aef8d5e0b3b9adb2d990e058b34, type: 2}

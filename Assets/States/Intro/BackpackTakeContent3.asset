@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f5aa17978b9d0618a26f1d826efb05, type: 3}
+  m_Name: BackpackTakeContent3
+  m_EditorClassIdentifier: 
+  StoryText: "In the other pockets of the bag you find different plants, a bread,
+    a long leather cape and boots. \n\nOn one of the side of the backpack is stuffed
+    a pouch. You found 2 gold and 5 silver coins.\n\nThey have some unknown face
+    depicted on them. It makes you wonder where exactly are you."
+  ChoicesText: 1. Go on your way
+  SceneItems:
+  - Unidentified herb
+  - Unidentified herb
+  - Bread
+  - Long leather cape
+  - Boots
+  - Gold coin
+  - Gold coin
+  - Silver coin
+  - Silver coin
+  - Silver coin
+  - Silver coin
+  - Silver coin
+  nextStates:
+  - {fileID: 11400000, guid: b8bf0816233f337918162bad941465e2, type: 2}

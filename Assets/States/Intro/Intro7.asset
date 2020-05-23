@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f5aa17978b9d0618a26f1d826efb05, type: 3}
+  m_Name: Intro7
+  m_EditorClassIdentifier: 
+  StoryText: "An unbeliavably long bridge occupies your attention for a few moments.
+    \n\nStartled by the noice of leaves, you turn around to find a trail in the grass
+    that leads into a deep and thick forest.\n\nInstinctively looking in the oposite
+    direction, you see a medieval castle ...\n\nYou ..."
+  ChoicesText: '1. Look around you.
+
+    2. Take the way towards the forest
+
+    3.
+    Take the way to the bridge.
+
+    4. Go towards the castle.'
+  SceneItems: []
+  nextStates:
+  - {fileID: 11400000, guid: e5aebf43603f1afa18a040ff93cd3bb1, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

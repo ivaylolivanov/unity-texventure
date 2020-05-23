@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f5aa17978b9d0618a26f1d826efb05, type: 3}
+  m_Name: Backpack1
+  m_EditorClassIdentifier: 
+  StoryText: "Despite the deep panic you somehow manage to stay sane. \n\nIn a somewhat
+    calmer way you notice a backpack near you.\n... perhaps it belongs to someone
+    ?"
+  ChoicesText: '1. Check if the bag belongs to someone.
+
+    2. Scrounge the content
+    of the bag.
+
+    3. Go on your way'
+  SceneItems: []
+  nextStates:
+  - {fileID: 11400000, guid: 125ddfd34f6d338d0b7e149779f255e9, type: 2}
+  - {fileID: 11400000, guid: b652f416330cd7562986d70baa49209a, type: 2}
+  - {fileID: 11400000, guid: b652f416330cd7562986d70baa49209a, type: 2}
