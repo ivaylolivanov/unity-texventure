@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f5aa17978b9d0618a26f1d826efb05, type: 3}
+  m_Name: BridgeSpentNight3
+  m_EditorClassIdentifier: 
+  StoryText: 'You take out the bread. It is slightly old, but you do not have another
+    option.
+
+
+    You take a small bite...
+
+
+    It loooks like the food is eligible...'
+  ChoicesText: '1. Turn around and go to the meadow.
+
+    2. Go towards the building.'
+  SceneItems: []
+  nextStates:
+  - {fileID: 11400000, guid: 6ae74dd2fd2ecb851be60b33bef4e0f9, type: 2}
+  - {fileID: 11400000, guid: 1f74edf8c6e094753b399c0aaef615a4, type: 2}
