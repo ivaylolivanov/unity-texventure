@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f5aa17978b9d0618a26f1d826efb05, type: 3}
+  m_Name: Village2
+  m_EditorClassIdentifier: 
+  StoryText: "Getting close to the town, its guards notice you and start walking
+    towards you. \nYou ...\n\n"
+  ChoicesText: '1. Run back.
+
+    2. Wait and see if you would be able to stay in
+    town.'
+  SceneItems: []
+  nextStates:
+  - {fileID: 11400000, guid: 6ae74dd2fd2ecb851be60b33bef4e0f9, type: 2}
+  - {fileID: 11400000, guid: 43b428c4a5d9a4baaa2e21a745117c58, type: 2}
