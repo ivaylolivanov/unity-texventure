@@ -34,6 +34,8 @@ MonoBehaviour:
     2. Try to
     escape.'
   SceneItems: []
+  ChoicesCost:
+  - Rune card
   nextStates:
   - {fileID: 11400000, guid: ee036560a563fc8219cdb7ba64d0b7ec, type: 2}
   - {fileID: 11400000, guid: 8dfbcf0f8ee9e6d398efa1940c0834e0, type: 2}

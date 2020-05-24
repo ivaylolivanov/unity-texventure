@@ -21,6 +21,8 @@ MonoBehaviour:
 
     2. keep walking through the night.'
   SceneItems: []
+  ChoicesCost:
+  - Long leather cape
   nextStates:
   - {fileID: 11400000, guid: 5b243190d03028277ae3654e976733cc, type: 2}
   - {fileID: 11400000, guid: 1f74edf8c6e094753b399c0aaef615a4, type: 2}

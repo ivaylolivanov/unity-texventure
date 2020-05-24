@@ -24,6 +24,8 @@ MonoBehaviour:
 
     2. Go towards the building.'
   SceneItems: []
+  ChoicesCost:
+  - Bread
   nextStates:
   - {fileID: 11400000, guid: 7414a4357d4a942c4bcedb49c83410e3, type: 2}
   - {fileID: 11400000, guid: 1f74edf8c6e094753b399c0aaef615a4, type: 2}

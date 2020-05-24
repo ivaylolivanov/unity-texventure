@@ -18,5 +18,6 @@ MonoBehaviour:
     the same time. Instinctively, you close your eyes. You faint ... '
   ChoicesText: 1. ...
   SceneItems: []
+  ChoicesCost: []
   nextStates:
   - {fileID: 11400000, guid: f1c70aef8d5e0b3b9adb2d990e058b34, type: 2}

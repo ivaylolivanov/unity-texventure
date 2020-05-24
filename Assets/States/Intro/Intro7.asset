@@ -25,8 +25,9 @@ MonoBehaviour:
 
     4. Go towards the castle.'
   SceneItems: []
+  ChoicesCost: []
   nextStates:
   - {fileID: 11400000, guid: e5aebf43603f1afa18a040ff93cd3bb1, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2f893d7beea352d9a9690f216752e7a1, type: 2}
+  - {fileID: 11400000, guid: 4798f70a6dbba34ee989ccfb1102e6ba, type: 2}
+  - {fileID: 11400000, guid: 8fb1a5b050b327d8ca24ff24ec101e5e, type: 2}
