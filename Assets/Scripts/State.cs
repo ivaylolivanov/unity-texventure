@@ -27,6 +27,9 @@ public class State : ScriptableObject {
     public string[] GetItems() {
         return SceneItems;
     }
+
+    public string[] GetChoicesCost() {
+        return ChoicesCost;
     }
 
 }
