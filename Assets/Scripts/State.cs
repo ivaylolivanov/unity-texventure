@@ -13,19 +13,20 @@ public class State : ScriptableObject {
     [SerializeField] private List<State> nextStates;
 
     public string GetStoryText() {
-	return StoryText;
+        return StoryText;
     }
 
     public string GetChoicesText() {
-	return ChoicesText;
+        return ChoicesText;
     }
 
-    public State[] GetNextStates() {
-	return nextStates;
+    public List<State> GetNextStates() {
+        return nextStates;
     }
 
     public string[] GetItems() {
-	return SceneItems;
+        return SceneItems;
+    }
     }
 
 }
