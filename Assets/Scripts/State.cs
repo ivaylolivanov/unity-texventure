@@ -12,6 +12,8 @@ public class State : ScriptableObject {
     [SerializeField] private  string[] ChoicesCost;
     [SerializeField] private List<State> nextStates;
 
+    private List<State> usedStates = new List<State>();
+
     public string GetStoryText() {
         return StoryText;
     }
@@ -32,4 +34,12 @@ public class State : ScriptableObject {
         return ChoicesCost;
     }
 
+    public void Use(State s) {
+        this.usedStates.Add(s);
+    }
+
+    public bool IsUsed(State s) {
+	if(usedStates.Contains(s)) return true;
+	else return false;
+    }
 }
