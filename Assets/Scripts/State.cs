@@ -5,11 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "State")]
 public class State : ScriptableObject {
 
-    [TextArea(10,14)] [SerializeField] string   StoryText;
-    [TextArea(5, 14)] [SerializeField] string   ChoicesText;
-    [TextArea(1, 14)] [SerializeField] string[] SceneItems;
+    [TextArea(10, 14)] [SerializeField] private string StoryText;
+    [TextArea(5, 14)] [SerializeField]  private string ChoicesText;
+    [TextArea(1, 14)] [SerializeField]  private string[] SceneItems;
 
-    [SerializeField] State[] nextStates;
+    [SerializeField] private  string[] ChoicesCost;
+    [SerializeField] private List<State> nextStates;
 
     public string GetStoryText() {
 	return StoryText;
