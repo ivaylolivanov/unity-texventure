@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,71 +15,118 @@ public class AdventureGame : MonoBehaviour
     State prevState;
 
     Dictionary<string, int> inventoryItems = new Dictionary<string, int>();
+    string[] expendableItems = {
+	"Gold coin",
+	"Silver coin",
+	"Bread",
+	"Red potion",
+	"Silver potion",
+	"Unidentified Herb"
+    };
 
     void Start() {
 	state = startingState;
 
-	storyTextComponent.text     = state.GetStoryText();
-	choicesTextComponent.text   = state.GetChoicesText();
-
-	inventoryItems.Add("Gold",   0);
-	inventoryItems.Add("Silver", 0);
+	storyTextComponent.text   = state.GetStoryText();
+	choicesTextComponent.text = state.GetChoicesText();
     }
 
-    // Update is called once per frame
     void Update() {
+	if (Input.GetKey("escape")) {
+            Application.Quit();
+        }
 	ManageState();
     }
 
     private void ManageState() {
-	var nextStates = state.GetNextStates();
-	string[] sceneItems;
+	List<State> nextStates = state.GetNextStates();
+	string[] sceneItems = state.GetItems();
+        string[] choiceCost = state.GetChoicesCost();
 
-	prevState = state;
+        if (prevState != state) { TakeItems(sceneItems); }
 
-	if(Input.GetKeyDown(KeyCode.Alpha1)) {
-	    state = nextStates[0];
+        prevState = state;
+
+	if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            int stateIndex = 0;
+            string cost = stateIndex < choiceCost.Length ? choiceCost[stateIndex] : "";
+	    if(IsChoiceAffordable(cost) && stateIndex < nextStates.Count && !state.IsUsed(nextStates[stateIndex])) {
+		state = nextStates[stateIndex];
+		UpdateInventory(cost);
+                prevState.Use(state);
+            }
 	}
-	else if(Input.GetKeyDown(KeyCode.Alpha2)) {
-	    state = nextStates[1];
+	else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            int stateIndex = 1;
+            string cost = stateIndex < choiceCost.Length ? choiceCost[stateIndex] : "";
+	    if(IsChoiceAffordable(cost) && stateIndex < nextStates.Count && !state.IsUsed(nextStates[stateIndex])) {
+		state = nextStates[stateIndex];
+		UpdateInventory(cost);
+                prevState.Use(state);
+            }
 	}
-	else if(Input.GetKeyDown(KeyCode.Alpha3)) {
-	    state = nextStates[2];
+	else if (Input.GetKeyDown(KeyCode.Alpha3)) {
+	    int stateIndex = 2;
+            string cost = stateIndex < choiceCost.Length ? choiceCost[stateIndex] : "";
+	    if(IsChoiceAffordable(cost) && stateIndex < nextStates.Count && !state.IsUsed(nextStates[stateIndex])) {
+		state = nextStates[stateIndex];
+		UpdateInventory(cost);
+		prevState.Use(state);
+            }
 	}
-	else if(Input.GetKeyDown(KeyCode.Alpha4)) {
-	    state = nextStates[3];
+	else if (Input.GetKeyDown(KeyCode.Alpha4)) {
+	    int stateIndex = 3;
+            string cost = stateIndex < choiceCost.Length ? choiceCost[stateIndex] : "";
+	    if(IsChoiceAffordable(cost) && stateIndex < nextStates.Count && !state.IsUsed(nextStates[stateIndex])) {
+		state = nextStates[stateIndex];
+		UpdateInventory(cost);
+		prevState.Use(state);
+            }
 	}
 
-	storyTextComponent.text   = state.GetStoryText();
+        storyTextComponent.text   = state.GetStoryText();
 	choicesTextComponent.text = state.GetChoicesText();
+	ShowInventory();
+    }
 
-	if(prevState != state){
-	    UpdateInventory(state);
-	    ShowInventory();
+    private bool IsChoiceAffordable(string cost) {
+        if(cost == "") return true;
+        if(! inventoryItems.ContainsKey(cost)) {
+            return false;
+	}
+
+	return true;
+    }
+
+    private void UpdateInventory(string cost) {
+	if (inventoryItems.ContainsKey(cost)) {
+	    if (expendableItems.Contains(cost)) {
+		--inventoryItems[cost];
+	    }
+
+	    if(inventoryItems[cost] <= 0) {
+		inventoryItems.Remove(cost);
+	    }
 	}
     }
 
-    private void UpdateInventory(State currentState) {
-	string[] SceneItems = currentState.GetItems();
+    private void TakeItems(string[] items) {
+        foreach(var item in items) {
+	    if(inventoryItems.ContainsKey(item)) {
+		inventoryItems[item] += 1;
+	    }
 
-	if(SceneItems != null) {
-	    foreach(var item in SceneItems) {
-		if(inventoryItems.ContainsKey(item)) {
-		    inventoryItems[item] += 1;
-		}
-
-		else {
-		    inventoryItems.Add(item, 1);
-		}
+	    else {
+		inventoryItems.Add(item, 1);
 	    }
 	}
     }
 
     private void ShowInventory() {
-	inventoryTextComponent.text = "";
+        inventoryTextComponent.text = "";
 
-	foreach(KeyValuePair<string, int> item in inventoryItems) {
-	    inventoryTextComponent.text += item.Value + " x " + item.Key + "\n";
+        foreach(KeyValuePair<string, int> item in inventoryItems) {
+	    inventoryTextComponent.text += item.Value + " x " + item.Key + ", ";
 	}
 
 	// inventoryTextComponent.text += "\n";
