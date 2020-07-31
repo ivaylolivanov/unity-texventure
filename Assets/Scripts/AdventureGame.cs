@@ -47,42 +47,23 @@ public class AdventureGame : MonoBehaviour
 
         prevState = state;
 
-	if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            int stateIndex = 0;
-            string cost = stateIndex < choiceCost.Length ? choiceCost[stateIndex] : "";
-	    if(IsChoiceAffordable(cost) && stateIndex < nextStates.Count && !state.IsUsed(nextStates[stateIndex])) {
-		state = nextStates[stateIndex];
-		UpdateInventory(cost);
-                prevState.Use(state);
+        for (int stateIndex = 0; stateIndex < nextStates.Count; ++stateIndex) {
+
+            if (Input.GetKeyDown(KeyCode.Alpha1 + stateIndex)) {
+                string cost = stateIndex < choiceCost.Length
+		    ? choiceCost[stateIndex] : "";
+
+                if (IsChoiceAffordable(cost)
+		    && (stateIndex < nextStates.Count)
+		    && !state.IsUsed(nextStates[stateIndex])
+		    )
+                {
+                    state = nextStates[stateIndex];
+                    UpdateInventory(cost);
+                    prevState.Use(state);
+                }
             }
-	}
-	else if (Input.GetKeyDown(KeyCode.Alpha2)) {
-            int stateIndex = 1;
-            string cost = stateIndex < choiceCost.Length ? choiceCost[stateIndex] : "";
-	    if(IsChoiceAffordable(cost) && stateIndex < nextStates.Count && !state.IsUsed(nextStates[stateIndex])) {
-		state = nextStates[stateIndex];
-		UpdateInventory(cost);
-                prevState.Use(state);
-            }
-	}
-	else if (Input.GetKeyDown(KeyCode.Alpha3)) {
-	    int stateIndex = 2;
-            string cost = stateIndex < choiceCost.Length ? choiceCost[stateIndex] : "";
-	    if(IsChoiceAffordable(cost) && stateIndex < nextStates.Count && !state.IsUsed(nextStates[stateIndex])) {
-		state = nextStates[stateIndex];
-		UpdateInventory(cost);
-		prevState.Use(state);
-            }
-	}
-	else if (Input.GetKeyDown(KeyCode.Alpha4)) {
-	    int stateIndex = 3;
-            string cost = stateIndex < choiceCost.Length ? choiceCost[stateIndex] : "";
-	    if(IsChoiceAffordable(cost) && stateIndex < nextStates.Count && !state.IsUsed(nextStates[stateIndex])) {
-		state = nextStates[stateIndex];
-		UpdateInventory(cost);
-		prevState.Use(state);
-            }
-	}
+        }
 
         storyTextComponent.text   = state.GetStoryText();
 	choicesTextComponent.text = state.GetChoicesText();
