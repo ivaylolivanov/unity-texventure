@@ -18,6 +18,6 @@ Debian and Windows. The goal of the project was to practice game development and
 * Story line
 
 # Screenshots
-![Tutorial](/home/m00ns7ruck/Projects/text101/images/Tutorial.png)
+![Tutorial](images/Tutorial.png)
 
-![Inventory items](/home/m00ns7ruck/Projects/text101/images/Inventory.png)
+![Inventory items](images/Inventory.png)
